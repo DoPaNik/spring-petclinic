@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_34c585a9aab24156b47704fdc0750438 }}/dopa0002/pet-clinic:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_34c585a9aab24156b47704fdc0750438 }}/pet-clinic:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'shukria-pet-clinic'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8ef3a47a21cd4f60b9bf9acba8805df8 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_34c585a9aab24156b47704fdc0750438 }}/dopa0002/pet-clinic:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_34c585a9aab24156b47704fdc0750438 }}/pet-clinic:${{ github.sha }}'
